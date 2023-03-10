@@ -41,9 +41,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'patient', targetEntity: Avis::class, orphanRemoval: true)]
     private Collection $avis;
 
+    #[ORM\ManyToMany(targetEntity: Allergene::class, inversedBy: 'users')]
+    private Collection $allergene;
+
+    #[ORM\ManyToMany(targetEntity: Regime::class, inversedBy: 'users')]
+    private Collection $regime;
+
     public function __construct()
     {
         $this->avis = new ArrayCollection();
+        $this->allergene = new ArrayCollection();
+        $this->regime = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -197,6 +205,54 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $avi->setPatient(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Allergene>
+     */
+    public function getAllergene(): Collection
+    {
+        return $this->allergene;
+    }
+
+    public function addAllergene(Allergene $allergene): self
+    {
+        if (!$this->allergene->contains($allergene)) {
+            $this->allergene->add($allergene);
+        }
+
+        return $this;
+    }
+
+    public function removeAllergene(Allergene $allergene): self
+    {
+        $this->allergene->removeElement($allergene);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Regime>
+     */
+    public function getRegime(): Collection
+    {
+        return $this->regime;
+    }
+
+    public function addRegime(Regime $regime): self
+    {
+        if (!$this->regime->contains($regime)) {
+            $this->regime->add($regime);
+        }
+
+        return $this;
+    }
+
+    public function removeRegime(Regime $regime): self
+    {
+        $this->regime->removeElement($regime);
 
         return $this;
     }

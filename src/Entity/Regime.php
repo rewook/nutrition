@@ -21,9 +21,13 @@ class Regime
     #[ORM\ManyToMany(targetEntity: Recette::class, mappedBy: 'regime')]
     private Collection $recettes;
 
+    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'regime')]
+    private Collection $users;
+
     public function __construct()
     {
         $this->recettes = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -65,6 +69,33 @@ class Regime
     {
         if ($this->recettes->removeElement($recette)) {
             $recette->removeRegime($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->addRegime($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeRegime($this);
         }
 
         return $this;

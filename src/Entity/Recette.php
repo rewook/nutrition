@@ -43,6 +43,9 @@ class Recette
     #[ORM\Column]
     private ?bool $public = null;
 
+    #[ORM\OneToMany(mappedBy: 'recette', targetEntity: Avis::class, orphanRemoval: true)]
+    private Collection $avis;
+
 
 
     public function __construct()
@@ -50,6 +53,7 @@ class Recette
         $this->allergene = new ArrayCollection();
         $this->regime = new ArrayCollection();
         $this->etape = new ArrayCollection();
+        $this->avis = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -197,6 +201,36 @@ class Recette
     public function setPublic(bool $public): self
     {
         $this->public = $public;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Avis>
+     */
+    public function getAvis(): Collection
+    {
+        return $this->avis;
+    }
+
+    public function addAvi(Avis $avi): self
+    {
+        if (!$this->avis->contains($avi)) {
+            $this->avis->add($avi);
+            $avi->setRecette($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAvi(Avis $avi): self
+    {
+        if ($this->avis->removeElement($avi)) {
+            // set the owning side to null (unless already changed)
+            if ($avi->getRecette() === $this) {
+                $avi->setRecette(null);
+            }
+        }
 
         return $this;
     }

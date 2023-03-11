@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ServicesController!{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Mes Services</h1>
+            <p>
+                <ul>
+                <li>Bilan et définition d’objectifs nutritionnels</li>
+                <li>Partage de recettes adaptéees</li>
+                <li>Animation d’ateliers de prévention et d’information sur la nutrition</li>
+            </ul>
+            </p>
+
+
+        </div>
+    </div>
+
+    <div>
+        <div class="row">
+            <div class="col"><img src="{{ asset('images/paniers2.jpg') }}" width="400px" height="650px alt="panier legume 2">
+
+            </div>
+            <div class="col"><img src="{{ asset('images/dieteticienne1.jpg') }}" width="400px" height="650px"  alt="Sandrine Coupart">
+
+            </div>
+            <div class="col"><img src="{{ asset('images/paniers3.jpg') }}" width="400px" height="650px alt="panier legume 3">
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

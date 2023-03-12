@@ -1,0 +1,23 @@
+{% extends 'BACKOFFICE/admin.html.twig' %}
+
+{% block title %}recette {{ recette.titre }}{% endblock %}
+
+{% block body %}
+    <h2 class="text-center mt-5 mb-3">Edition recette</h2>
+    <div class="card">
+        <div class="card-header">
+            <a class="btn btn-outline-info float-right" href="{{ path('show_admin_recette') }}">
+                Liste des recettes
+            </a>
+        </div>
+        <div class="card-body">
+            {% include 'BACKOFFICE/recette/_form.html.twig' with {'button_label': 'Mettre à jour', 'button_color': 'btn-outline-success'}  %}
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

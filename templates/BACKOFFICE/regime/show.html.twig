@@ -1,0 +1,45 @@
+{% extends 'BACKOFFICE/admin.html.twig' %}
+
+{% block title %}liste Régime{% endblock %}
+
+{% block body %}
+
+
+    <div class="table-responsive">
+        <h1 class="text-center">liste des Régimes</h1>
+
+        <table class="table table-striped table-bordered mt-5" id="datatable">
+            <thead>
+                <tr>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">NOM</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center">actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for regime in regimes %}
+                    <tr class="text-center">
+                        <td>{{ regime.id }}</td>
+                        <td>{{ regime.nom }}</td>
+                        <td>{{ regime.description }}</td>
+                        <td>
+
+                            <a href="{{ path('edit_admin_regime', {'id': regime.id}) }}"><input type="button" class="btn btn-outline-info" value="EDITION" /></a>
+                            <a href="{{ path('delete_admin_regime', {'id': regime.id}) }}"><input type="button" class="btn btn-outline-danger" value="SUPPRIMER" onclick="return confirm('Etes-vous sûr de vouloir supprimer cet Allergène ?')" /> </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('add_admin_regime') }}"><input type="button" class="btn btn-outline-primary" value="AJOUTER" /></a>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable();
+        });
+    </script>
+
+{% endblock %}

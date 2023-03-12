@@ -27,7 +27,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                            Connecté
+                            GESTION
                         </a>
                         <ul class="dropdown-menu bg-site" >
 
@@ -49,7 +49,7 @@
                             </li>
                             <li class="nav-item">
 
-                                <a class="nav-link" href="#" >ALLERGENES</a>
+                                <a class="nav-link" href="{{ path('show_admin_allergene') }}" >ALLERGENES</a>
                             </li>
 
                         </ul>
@@ -75,8 +75,61 @@
         </div>
     </nav>
 
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success mt-3 alert-dismissible fade show">
+
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger mt-3 alert-dismissible fade show">
+
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('warning') %}
+        <div class="alert alert-warning mt-3 alert-dismissible fade show">
+
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('info') %}
+        <div class="alert alert-info mt-3 alert-dismissible fade show">
+
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+
+
     <div class="container mt-5">
         {% block body %}{% endblock %}
     </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable();
+        });
+    </script>
+    <script>
+        const alerts = document.querySelectorAll('[class*="alert-"]')
+        for (const alert of alerts) {
+            setTimeout( function() {
+                const bootstrapAlert = bootstrap.Alert.getOrCreateInstance(alert);
+                bootstrapAlert.close();
+            }, 5000);
+        }
+    </script>
+
     </body>
+
 </html>

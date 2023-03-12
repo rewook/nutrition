@@ -12,3 +12,6 @@ import { Tooltip, Toast, Popover } from 'bootstrap';
 
 // start the Stimulus application
 import './bootstrap';
+
+const $ = require('jquery');
+global.$ = global.jQuery = $;

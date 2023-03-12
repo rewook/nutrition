@@ -1,0 +1,19 @@
+{% extends 'BACKOFFICE/admin.html.twig' %}
+
+{% block title %}liste Ingrédients{% endblock %}
+
+{% block body %}
+
+    <h2 class="text-center mt-5 mb-3">Ajout d'un ingrédient</h2>
+    <div class="card">
+        <div class="card-header">
+            <a class="btn btn-outline-info float-right" href="{{ path('show_admin_ingredient') }}">
+                Liste des ingrédients
+            </a>
+        </div>
+        <div class="card-body">
+            {{ include('BACKOFFICE/ingredient/_form.html.twig') }}
+        </div>
+    </div>
+
+{% endblock %}

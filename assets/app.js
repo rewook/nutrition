@@ -15,3 +15,16 @@ import './bootstrap';
 
 const $ = require('jquery');
 global.$ = global.jQuery = $;
+
+$("#datatable").DataTable(
+    {
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.11.5/i18n/fr-FR.json'
+        }
+    }
+);
+
+// Datatable (plugin jquery) pour bootstrap
+import './jquery.dataTables.js';
+import './dataTables.bootstrap5';
+import './styles/dataTables.bootstrap5.css';

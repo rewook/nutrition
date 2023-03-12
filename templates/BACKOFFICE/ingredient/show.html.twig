@@ -1,0 +1,41 @@
+{% extends 'BACKOFFICE/admin.html.twig' %}
+
+{% block title %}liste Ingrédient{% endblock %}
+
+{% block body %}
+
+
+    <div class="table-responsive">
+        <h1 class="text-center">liste des Ingrédients</h1>
+
+        <table class="table table-striped table-bordered mt-5" id="datatable">
+            <thead>
+                <tr>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">NOM</th>
+                    <th class="text-center">photo</th>
+                    <th class="text-center">actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ingredient in ingredients %}
+                    <tr class="text-center">
+                        <td>{{ ingredient.id }}</td>
+                        <td>{{ ingredient.nom }}</td>
+                        <td><img src="/uploads/brochures/{{ ingredient.photo }}") } width="50px"  alt="{{ ingredient.nom }}"/></td>
+                        <td>
+
+                            <a href="{{ path('edit_admin_ingredient', {'id': ingredient.id}) }}"><input type="button" class="btn btn-outline-info" value="EDITION" /></a>
+                            <a href="{{ path('delete_admin_ingredient', {'id': ingredient.id}) }}"><input type="button" class="btn btn-outline-danger" value="SUPPRIMER" onclick="return confirm('Etes-vous sûr de vouloir supprimer cet Allergène ?')" /> </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('add_admin_ingredient') }}"><input type="button" class="btn btn-outline-primary" value="AJOUTER" /></a>
+    </div>
+
+
+
+{% endblock %}

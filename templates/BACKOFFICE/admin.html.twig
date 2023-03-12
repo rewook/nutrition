@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Administration{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -41,7 +41,7 @@
                                 </li>
                                 <li class="nav-item">
 
-                                    <a class="nav-link" href="#" >INGREDIENTS</a>
+                                    <a class="nav-link" href="{{ path('show_admin_ingredient') }}" >INGREDIENTS</a>
                                 </li>
                             <li class="nav-item">
 

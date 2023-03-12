@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Administration{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <p><b>Sandrine COUPART</b><br>
+            Diéteticienne - Nutritionniste</p>
+
+
+            <div class="collapse navbar-collapse" id="navbarScroll">
+
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                            Connecté
+                        </a>
+                        <ul class="dropdown-menu bg-site" >
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">PATIENT</a>
+                                </li>
+                                <li class="nav-item">
+
+                                        <a class="nav-link" href="#">RECETTES</a>
+
+                                </li>
+                                <li class="nav-item">
+
+                                    <a class="nav-link" href="#" >INGREDIENTS</a>
+                                </li>
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="#" >REGIMES</a>
+                            </li>
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="#" >ALLERGENES</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+                <ul>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="{{ path('app_accueil') }}" >Retour sur le site</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="{{ path('app_logout') }}" >Se Déconnecter</a>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        {% block body %}{% endblock %}
+    </div>
+    </body>
+</html>

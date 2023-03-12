@@ -35,21 +35,63 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_contact') }}">CONTACT</a>
                     </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    {% if app.user is null %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_login') }}" >Se Connecter</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <p>Bonjour {{ app.user.prenom }} {{ app.user.nom }}
-                        <a href="{{ path('app_patient') }}" >Vos Recettes</a></p>
-                        <a class="nav-link" href="{{ path('app_logout') }}" >Se Déconnecter</a>
-                    </li>
-                    {% endif %}
+
                 </ul>
 
+                {% if app.user is null %}
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <ul>
+                            <li>
+                        <a class="nav-link dropdown-toggle" href="{{ path('app_login') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Se Connecter
+                        </a>
+                            </li>
+                        </ul>
+
+                </ul>
+                {% else %}
+
+
+
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                            Connecté
+                        </a>
+                        <ul class="dropdown-menu bg-site" >
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('app_admin') }}">GESTION</a>
+                                </li>
+                            {% endif %}
+
+
+
+                                <li class="nav-item">
+
+                                        <a class="nav-link" href="{{ path('app_patient') }}" >Vos Recettes</a>
+
+                                </li>
+                                <li class="nav-item">
+
+                                    <a class="nav-link" href="{{ path('app_logout') }}" >Se Déconnecter</a>
+                                </li>
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+
+                    <ul>
+                        <li>
+                            <p class="text-white">Bonjour {{ app.user.prenom }} {{ app.user.nom }}</p>
+                        </li>
+                    </ul>
+
+                {% endif %}
             </div>
         </div>
     </nav>

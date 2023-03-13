@@ -17,6 +17,7 @@
                     <th class="text-center">Temps de préparation</th>
                     <th class="text-center">Temps de repos</th>
                     <th class="text-center">Temps de cuisson</th>
+                    <th class="text-center">Ingrédients</th>
                     <th class="text-center">public</th>
                     <th class="text-center">actions</th>
                 </tr>
@@ -30,6 +31,7 @@
                         <td>{{ recette.tempsPrepa }}</td>
                         <td>{{ recette.tempsRepos }}</td>
                         <td>{{ recette.tempsCuisson }}</td>
+                        <td><a href="{{ path('app_ingredient_recette',{'id': recette.id}) }}"><i class="fa-solid fa-file-pen"></i></a></td>
                         <td>
                             {% if recette.public == false %}
                                 <span>Non</span>

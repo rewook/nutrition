@@ -1,0 +1,23 @@
+{% extends 'BACKOFFICE/admin.html.twig' %}
+
+{% block title %}Patient {{ patient.nom }} {{ patient.prenom }}{% endblock %}
+
+{% block body %}
+    <h2 class="text-center mt-5 mb-3">Edition patient</h2>
+    <div class="card">
+        <div class="card-header">
+            <a class="btn btn-outline-info float-right" href="{{ path('show_admin_patient') }}">
+                Liste des patients
+            </a>
+        </div>
+        <div class="card-body">
+            {% include 'BACKOFFICE/patient/_form.html.twig' with {'button_label': 'Mettre à jour', 'button_color': 'btn-outline-success'}  %}
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

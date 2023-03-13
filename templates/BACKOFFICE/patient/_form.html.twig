@@ -1,0 +1,20 @@
+{{ form_start(form) }}
+<div class="form-group">
+    {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+    {{ form_row(form.nom, {'attr': {'class': 'form-control'}}) }}
+    {{ form_row(form.prenom, {'attr': {'class': 'form-control'}}) }}
+    {{ form_row(form.telephone, {'attr': {'class': 'form-control'}}) }}
+
+    <div class="row mt-5">
+        <div class="col">
+            {{ form_row(form.allergene, {'attr': {'class': 'mb-2'}}) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.regime, {'attr': {'class': 'mb-2'}}) }}
+        </div>
+
+    </div>
+</div>
+
+<button class="btn {{ button_color|default('btn-outline-primary') }}  mt-3">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

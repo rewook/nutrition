@@ -44,26 +44,6 @@ class IngredientController extends AbstractController
 
                 $brochureFileName = $fileUploader->upload($brochureFile);
 
-
-
-//                $newFilename = $safeFilename.'-'.$brochureFile->guessExtension();
-//
-//
-//
-//                // Move the file to the directory where brochures are stored
-//                try {
-//                    $brochureFile->move(
-//                        $this->getParameter('brochures_directory'),
-//                        $newFilename
-//                    );
-//                } catch (FileException $e) {
-//                    // ... handle exception if something happens during file upload
-//                }
-
-
-
-                // updates the 'brochureFilename' property to store the PDF file name
-                // instead of its contents
                 $ingredient->setPhoto($brochureFileName);
             }
 

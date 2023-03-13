@@ -1,0 +1,50 @@
+{% extends 'BACKOFFICE/admin.html.twig' %}
+
+{% block title %}Etapes par Recette{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+
+    <div class="row">
+        <h2 class="text-center">Ajout d'une étape</h2>
+        <section class="border-1">
+        <div class="col">
+            {{ form_row(form.numero, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(form.description, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(form.photo, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        </section>
+
+    </div>
+
+    <button class="btn {{ button_color|default('btn-outline-primary') }}  mt-3">{{ button_label|default('AJOUTER') }}</button>
+    {{ form_end(form) }}
+
+    <div>
+
+        <h1 class="text-center">Liste des Etapes</h1>
+        <table class="table table-striped table-bordered mt-5" id="datatable">
+            <thead>
+            <tr>
+                <th class="text-center">Numéro</th>
+                <th class="text-center">Description</th>
+                <th class="text-center">Photo</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for etape in listeetapes %}
+                <tr>
+                    <td class="text-center">{{ etape.numero }}</td>
+                    <td class="text-center">{{ etape.description }}</td>
+                    <td class="text-center">{{ etape.photo }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <a href="{{ path('edit_admin_recette',{'id': recette}) }}" class="btn btn-outline-primary mt-3">Retour</a>
+    </div>
+{% endblock %}

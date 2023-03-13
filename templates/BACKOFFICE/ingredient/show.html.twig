@@ -25,8 +25,8 @@
                         <td><img src="/uploads/brochures/{{ ingredient.photo }}") } width="50px"  alt="{{ ingredient.nom }}"/></td>
                         <td>
 
-                            <a href="{{ path('edit_admin_ingredient', {'id': ingredient.id}) }}"><input type="button" class="btn btn-outline-info" value="EDITION" /></a>
-                            <a href="{{ path('delete_admin_ingredient', {'id': ingredient.id}) }}"><input type="button" class="btn btn-outline-danger" value="SUPPRIMER" onclick="return confirm('Etes-vous sûr de vouloir supprimer cet Allergène ?')" /> </a>
+                            <a href="{{ path('edit_admin_ingredient', {'id': ingredient.id}) }}"><i class="fa-solid fa-file-pen"></i></a>
+                            <a href="{{ path('delete_admin_ingredient', {'id': ingredient.id}) }}"><i class="fa-solid fa-trash-can" onclick="return confirm('Etes-vous sûr de vouloir supprimer cet Ingrédient ?')"></i></a>
                         </td>
                     </tr>
                 {% endfor %}

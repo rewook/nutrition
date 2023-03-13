@@ -34,9 +34,18 @@ class RecetteController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            foreach ($recette->getEtape() as $etape) {
+
+                $etape->setNumero($etape->getNumero());
+                $etape->setDescription($etape->getDescription());
+                $em->persist($etape);
+            }
+
+
+
             $em->persist($recette);
             $em->flush();
-            $this->addFlash('success', 'Allergène ajouté avec succès');
+            $this->addFlash('success', 'Recette ajouté avec succès');
             return $this->redirectToRoute('show_admin_recette');
         }
 

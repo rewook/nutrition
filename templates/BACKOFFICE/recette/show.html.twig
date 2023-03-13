@@ -39,8 +39,8 @@
                         </td>
                         <td>
 
-                            <a href="{{ path('edit_admin_recette', {'id': recette.id}) }}"><input type="button" class="btn btn-outline-info" value="EDITION" /></a>
-                            <a href="{{ path('delete_admin_recette', {'id': recette.id}) }}"><input type="button" class="btn btn-outline-danger" value="SUPPRIMER" onclick="return confirm('Etes-vous sûr de vouloir supprimer cette Recette ?')" /> </a>
+                            <a href="{{ path('edit_admin_recette', {'id': recette.id}) }}"><i class="fa-solid fa-file-pen"></i></a>
+                            <a href="{{ path('delete_admin_recette', {'id': recette.id}) }}"><i class="fa-solid fa-trash-can" onclick="return confirm('Etes-vous sûr de vouloir supprimer cette Recette ?')"></i></a>
                         </td>
                     </tr>
                 {% endfor %}

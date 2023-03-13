@@ -2,6 +2,8 @@
 
 {% block title %}liste des recettes{% endblock %}
 
+{% form_theme form _self %}
+
 {% block body %}
 
     <h2 class="text-center mt-5 mb-3">Ajout d'une recette</h2>
@@ -16,4 +18,76 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block _recette_etape_widget %}
+    <p>Ici vous pouvez ajouter les étapes de la recette</p>
+
+    {{ form_widget(form) }}
+
+    <div class="form-group" >
+        <button type="button" class="btn btn-outline-info" id="add_etape">
+            Ajouter une étape
+        </button>
+    </div>
+{% endblock %}
+
+{% block _recette_etape_entry_row %}
+    {{ form_widget(form) }}
+
+{% endblock %}
+
+{% block _recette_etape_entry_widget %}
+
+    <div class="form-group" id="block_{{ id }}">
+        <div class="row">
+            <div class="col-10">
+                <div class="row">
+                    <div class="col">
+                        <label>Numéro d'étape</label>
+                        {{ form_widget(form.numero) }}
+                    </div>
+
+                    <div class="col">
+                        <label>Description</label>
+                        {{ form_widget(form.description) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <button type="button" data-action="delete" data-target="#block_{{ id }}" class="btn btn-outline-danger" id="delete_etape_{{ id }}">
+                    Supprimer
+                </button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script>
+
+
+        $(document).ready(function () {
+            $('#add_etape').click(function () {
+                const index = $('#recette_etape div.form-group').length;
+
+                //prototype des entrées
+                const tmpl = $('#recette_etape').data('prototype').replace(/__name__/g, index);
+
+                //ajout du code au dom
+                $('#recette_etape').append(tmpl);
+
+                handleDeleteButtons();
+                 });
+             });
+
+        function handleDeleteButtons() {
+            $('button[data-action="delete"]').click(function () {
+                const target = this.dataset.target;
+                $(target).remove();
+            });
+        }
+        handleDeleteButtons();
+    </script>
 {% endblock %}

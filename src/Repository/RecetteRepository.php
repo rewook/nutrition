@@ -39,6 +39,16 @@ class RecetteRepository extends ServiceEntityRepository
         }
     }
 
+    public function findByEtape($id): ?Recette
+    {
+        return $this->createQueryBuilder('r')
+            ->Where('r.etape = :val')
+            ->setParameter('val', $id)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
 //    /**
 //     * @return Recette[] Returns an array of Recette objects
 //     */

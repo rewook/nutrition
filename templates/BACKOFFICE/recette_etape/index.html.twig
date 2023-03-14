@@ -29,6 +29,7 @@
                 <th class="text-center">Numéro</th>
                 <th class="text-center">Description</th>
                 <th class="text-center">Photo</th>
+                <th class="text-center">Action</th>
 
             </tr>
             </thead>
@@ -37,7 +38,8 @@
                 <tr>
                     <td class="text-center">{{ etape.numero }}</td>
                     <td class="text-center">{{ etape.description }}</td>
-                    <td class="text-center">{{ etape.photo }}</td>
+                    <td class="text-center"><img src="/uploads/brochures/{{ etape.photo }}" /></td>
+                    <td class="text-center"><a href="{{ path('delete_admin_etape', {'id': etape.id, 'recette': recette}) }}"><i class="fa-solid fa-trash-can" onclick="return confirm('Etes-vous sûr de vouloir supprimer cette Recette ?')"></i></a></td>
                 </tr>
             {% endfor %}
             </tbody>

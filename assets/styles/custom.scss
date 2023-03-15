@@ -86,3 +86,10 @@ a.dropdown-toggle {
 .fa-solid{
   color: #28AD1C;
 }
+
+.bg-image-jumbo{
+  background-image: url('http://localhost:8000/images/medecin2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  height: 600px;
+}

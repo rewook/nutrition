@@ -94,9 +94,23 @@
             </div>
         </div>
     </nav>
-
     <div class="container mt-5">
+        <div class="jumbotron">
+            <div class="p-5 text-center bg-image rounded-3 bg-image-jumbo" >
+                <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="text-white">
+                            <h1 class="mb-3">Sandrine COUPART</h1>
+                            <h4 class="mb-3">Médecin nutritionniste</h4>
+                            <a class="btn btn-outline-light btn-lg" href="{{ path('app_contact') }}" role="button">Prendre un Rendez-vous !</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         {% block body %}{% endblock %}
+
     </div>
     </body>
 </html>

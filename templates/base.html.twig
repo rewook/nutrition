@@ -16,13 +16,20 @@
     <body>
 
     <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <p><b>Sandrine COUPART</b><br>
+        <div class="container-fluid">
+
+            <p class="navbar-brand"><b>Sandrine COUPART</b><br>
             Diéteticienne - Nutritionniste</p>
 
 
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center flex-grow-1" id="navbarScroll">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_accueil') }}">Accueil</a>
                     </li>
@@ -94,21 +101,7 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-5">
-        <div class="jumbotron">
-            <div class="p-5 text-center bg-image rounded-3 bg-image-jumbo" >
-                <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-                    <div class="d-flex justify-content-center align-items-center h-100">
-                        <div class="text-white">
-                            <h1 class="mb-3">Sandrine COUPART</h1>
-                            <h4 class="mb-3">Médecin nutritionniste</h4>
-                            <a class="btn btn-outline-light btn-lg" href="{{ path('app_contact') }}" role="button">Prendre un Rendez-vous !</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        </div>
         {% block body %}{% endblock %}
 
     </div>

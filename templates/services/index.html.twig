@@ -3,9 +3,11 @@
 {% block title %}Hello ServicesController!{% endblock %}
 
 {% block body %}
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Mes Services</h1>
+<div class="container my-3 my-md-4 my-lg-5 mx-auto ">
+    <div class="row mt-lg-5 mt-sm-3">
+        <div class="col-md-12 col-sm-12">
+            <h1 class="text-center">Mes Services</h1>
+            <div class="mt-lg-5 mt-sm-3">
             <p>Ma consultation initiale est l'occasion pour moi de comprendre les objectifs de santé et les habitudes alimentaires de mes patients.
                 Au cours de cette consultation, je réalise une évaluation complète de leur état de santé et de leur composition corporelle,
                 ainsi qu'une analyse détaillée de leur régime alimentaire.
@@ -26,23 +28,18 @@
                 Ces événements sont conçus pour sensibiliser le public aux bienfaits d'une alimentation saine et pour fournir des conseils pratiques pour adopter un mode de vie plus sain.
                 J'aime partager mes connaissances avec les autres et je suis passionnée par l'éducation nutritionnelle.
             </p>
-
+            </div>
 
         </div>
     </div>
 
-    <div>
-        <div class="row">
-            <div class="col"><img src="{{ asset('images/paniers2.jpg') }}" width="400px" height="650px alt="panier legume 2">
 
-            </div>
-            <div class="col"><img src="{{ asset('images/dieteticienne1.jpg') }}" width="400px" height="650px"  alt="Sandrine Coupart">
+        <div class="row row mx-auto text-center mt-5">
 
-            </div>
-            <div class="col"><img src="{{ asset('images/paniers3.jpg') }}" width="400px" height="650px alt="panier legume 3">
+            <div class="col mx-auto"><img src="{{ asset('images/paniers3.jpg') }}" width="400px" height="650px alt="panier legume 3">
 
             </div>
         </div>
-    </div>
 
+</div>
 {% endblock %}

@@ -1,0 +1,4 @@
+[17-Mar-2023 23:17:00 UTC] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/sckb8760/coupart.piekarek.fr/nutrition/src/Security/EmailVerifier.php on line 4
+[17-Mar-2023 23:18:21 UTC] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/sckb8760/coupart.piekarek.fr/nutrition/src/Security/EmailVerifier.php on line 4
+[17-Mar-2023 23:22:55 UTC] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/sckb8760/coupart.piekarek.fr/nutrition/src/Security/EmailVerifier.php on line 4
+[17-Mar-2023 23:24:55 UTC] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/sckb8760/coupart.piekarek.fr/nutrition/src/Security/EmailVerifier.php on line 4

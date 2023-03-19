@@ -14,7 +14,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class AddCredentialController extends AbstractController
 {
     #[Route('/add/credential/docteur', name: 'app_add_credential_docteur')]
-    public function index(UserPasswordEncoderInterface $passwordEncoder,EntityManagerInterface $manager): Response
+    public function docteur(UserPasswordEncoderInterface $passwordEncoder,EntityManagerInterface $manager): Response
     {
 
         // Création du compte médecin

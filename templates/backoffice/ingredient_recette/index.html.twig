@@ -1,4 +1,4 @@
-{% extends '..' %}
+{% extends 'backoffice/admin.html.twig' %}
 
 {% block title %}Ingredient par Recette{% endblock %}
 
@@ -44,6 +44,6 @@
     </div>
 
     <div>
-        <a href="{{ path('edit_admin_recette',{'id': recette}) }}" class="btn btn-outline-primary mt-3">Retour</a>
+        <a href="{{ path('show_admin_recette') }}" class="btn btn-outline-primary mt-3">Retour</a>
     </div>
 {% endblock %}

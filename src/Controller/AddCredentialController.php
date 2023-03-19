@@ -25,7 +25,7 @@ class AddCredentialController extends AbstractController
         $doctor->setPrenom('Sandrine');
         $doctor->setTelephone('0606060606');
         $doctor->setIsVerified(true);
-        $doctor->setPassword($this->passwordEncoder->encodePassword(
+        $doctor->setPassword($passwordEncoder->encodePassword(
             $doctor,
             'Pa$$w0rd'
         ));
@@ -45,7 +45,7 @@ class AddCredentialController extends AbstractController
         $patient = new User();
         $patient->setEmail('patient@coupart.fr');
         $patient->setRoles(['ROLE_USER']);
-        $patient->setPassword($this->passwordEncoder->encodePassword(
+        $patient->setPassword($passwordEncoder->encodePassword(
             $patient,
             'Pa$$w0rd'
         ));

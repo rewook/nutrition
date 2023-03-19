@@ -49,6 +49,32 @@ class RecetteRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findRecettesSansAllergenesEtRegimes($allergenes, $regimes)
+    {
+        $qb = $this->createQueryBuilder('r');
+
+        // jointure avec la table des régimes
+        $qb->leftJoin('r.regime', 'reg')
+            ->leftJoin('r.allergene', 'alg');
+
+        // filtre sur les allergènes
+        if (!empty($allergenes)) {
+            $qb->andWhere($qb->expr()->notIn('alg.id', ':allergenes'))
+                ->orWhere('alg.id IS NULL')
+                ->setParameter('allergenes', $allergenes);
+        }
+
+        // filtre sur les régimes
+        if (!empty($regimes)) {
+            $qb->andWhere($qb->expr()->in('reg.id', ':regimes'))
+                ->setParameter('regimes', $regimes);
+        }
+
+        return $qb->getQuery()->getResult();
+    }
+
+
+
 //    /**
 //     * @return Recette[] Returns an array of Recette objects
 //     */

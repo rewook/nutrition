@@ -8,7 +8,7 @@
     <div class="table-responsive">
         <h1 class="text-center">liste des Recettes</h1>
 
-        {% if recettes %}
+
         <table class="table table-striped table-bordered mt-5" id="datatable">
             <thead>
                 <tr>
@@ -51,9 +51,7 @@
                 {% endfor %}
             </tbody>
         </table>
-        {% else %}
-            <p>Aucune recette</p>
-        {% endif %}
+
 
         <a href="{{ path('add_admin_recette') }}"><input type="button" class="btn btn-outline-primary" value="AJOUTER" /></a>
     </div>

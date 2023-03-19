@@ -38,7 +38,7 @@ class AddCredentialController extends AbstractController
     }
 
 
-    #[Route('/add/credential/patient', name: 'app_add_credential_docteur')]
+    #[Route('/add/credential/patient', name: 'app_add_credential_patient')]
     public function patient(UserPasswordEncoderInterface $passwordEncoder,EntityManagerInterface $manager): Response
     {
 

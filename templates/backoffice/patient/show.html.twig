@@ -16,7 +16,8 @@
                     <th class="text-center">Nom</th>
                     <th class="text-center">Prénom</th>
                     <th class="text-center">Téléphone</th>
-                    <th class="text-center">Allergènes</th>
+                    <th class="text-center">Allergène(s)</th>
+                    <th class="text-center">Régime(s)</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -28,7 +29,21 @@
                         <td>{{ patient.nom }}</td>
                         <td>{{ patient.prenom }}</td>
                         <td>{{ patient.telephone }}</td>
-                        <td>{{ patient.allergene.nom }}</td>
+                        <td>{%if patient.allergene is not empty %}
+                            {% for aller in patient.allergene %}
+                                {{ aller.nom }}<br>
+                            {% endfor %}
+                        {% else %}
+                            Aucun
+                        {% endif %}
+                        </td>
+                        <td> {%if patient.regime is not empty %}
+                                {% for reg in patient.regime %}
+                                    {{ reg.nom }}<br>
+                                {% endfor %}
+                            {% else %}
+                                Aucun
+                            {% endif %}
                         <td>
 
                             <a href="{{ path('edit_admin_patient', {'id': patient.id}) }}"><i class="fa-solid fa-file-pen"></i></a>

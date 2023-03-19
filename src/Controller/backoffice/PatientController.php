@@ -20,6 +20,8 @@ class PatientController extends AbstractController
         //récupération des patients
         $patients =  $userRepository->findAllUser('["ROLE_USER"]');
 
+
+
         return $this->render('backoffice/patient/show.html.twig', [
             'patients' => $patients,
         ]);

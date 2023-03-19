@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AddCredentialController extends AbstractController
 {
-    #[Route('/add/credential/doteur', name: 'app_add_credential_docteur')]
+    #[Route('/add/credential/docteur', name: 'app_add_credential_docteur')]
     public function index(UserPasswordEncoderInterface $passwordEncoder,EntityManagerInterface $manager): Response
     {
 

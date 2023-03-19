@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\BACKOFFICE;
+namespace App\Controller\backoffice;
 
 use App\Entity\Ingredient;
 use App\Form\IngredientType;
@@ -55,7 +55,7 @@ class IngredientController extends AbstractController
             return $this->redirectToRoute('show_admin_ingredient');
         }
 
-        return $this->render('BACKOFFICE/ingredient/add.html.twig', [
+        return $this->render('backoffice/ingredient/add.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -88,7 +88,7 @@ class IngredientController extends AbstractController
                 return $this->redirectToRoute('show_admin_ingredient');
             }
         }
-            return $this->render('BACKOFFICE/ingredient/edit.html.twig', [
+            return $this->render('backoffice/ingredient/edit.html.twig', [
                 'form' => $form->createView(),
                 'ingredient' => $ingredient,
             ]);

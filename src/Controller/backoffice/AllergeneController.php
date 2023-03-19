@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\BACKOFFICE;
+namespace App\Controller\backoffice;
 
 use App\Entity\Allergene;
 use App\Form\AllergeneType;
@@ -37,7 +37,7 @@ class AllergeneController extends AbstractController
             return $this->redirectToRoute('show_admin_allergene');
         }
 
-        return $this->render('BACKOFFICE/allergene/add.html.twig', [
+        return $this->render('backoffice/allergene/add.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -58,7 +58,7 @@ class AllergeneController extends AbstractController
             return $this->redirectToRoute('show_admin_allergene');
         }
 
-        return $this->render('BACKOFFICE/allergene/edit.html.twig', [
+        return $this->render('backoffice/allergene/edit.html.twig', [
             'form' => $form->createView(),
             'allergene' => $allergene,
         ]);

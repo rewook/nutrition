@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\BACKOFFICE;
+namespace App\Controller\backoffice;
 
 use App\Entity\Regime;
 use App\Form\RegimeType;
@@ -37,7 +37,7 @@ class RegimeController extends AbstractController
             return $this->redirectToRoute('show_admin_regime');
         }
 
-        return $this->render('BACKOFFICE/regime/add.html.twig', [
+        return $this->render('backoffice/regime/add.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -58,7 +58,7 @@ class RegimeController extends AbstractController
             return $this->redirectToRoute('show_admin_regime');
         }
 
-        return $this->render('BACKOFFICE/regime/edit.html.twig', [
+        return $this->render('backoffice/regime/edit.html.twig', [
             'form' => $form->createView(),
             'regime' => $regime,
         ]);

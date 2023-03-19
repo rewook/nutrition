@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\BACKOFFICE;
+namespace App\Controller\backoffice;
 
 use App\Entity\Etape;
 use App\Entity\Recette;

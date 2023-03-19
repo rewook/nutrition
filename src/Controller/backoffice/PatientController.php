@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\BACKOFFICE;
+namespace App\Controller\backoffice;
 
 use App\Entity\User;
 use App\Form\PatientType;
@@ -86,7 +86,7 @@ class PatientController extends AbstractController
             return $this->redirectToRoute('show_admin_patient');
         }
 
-        return $this->render('BACKOFFICE/patient/edit.html.twig', [
+        return $this->render('backoffice/patient/edit.html.twig', [
             'form' => $form->createView(),
             'patient' => $patient,
         ]);

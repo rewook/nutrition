@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\BACKOFFICE;
+namespace App\Controller\backoffice;
 
 use App\Entity\IngredientRecette;
 use App\Entity\Recette;
@@ -41,7 +41,7 @@ class IngredientRecetteController extends AbstractController
             return $this->redirectToRoute('app_ingredient_recette', ['id' => $id]);
         }
 
-        return $this->render('BACKOFFICE/ingredient_recette/index.html.twig', [
+        return $this->render('backoffice/ingredient_recette/index.html.twig', [
             'form' => $form->createView(),
             'listeingredients' => $listeingredients,
             'recette' => $id,

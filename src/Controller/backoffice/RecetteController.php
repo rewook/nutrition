@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\BACKOFFICE;
+namespace App\Controller\backoffice;
 
 use App\Entity\Recette;
 use App\Form\RecetteType;
@@ -49,7 +49,7 @@ class RecetteController extends AbstractController
             return $this->redirectToRoute('show_admin_recette');
         }
 
-        return $this->render('BACKOFFICE/recette/add.html.twig', [
+        return $this->render('backoffice/recette/add.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -70,7 +70,7 @@ class RecetteController extends AbstractController
             return $this->redirectToRoute('show_admin_recette');
         }
 
-        return $this->render('BACKOFFICE/recette/edit.html.twig', [
+        return $this->render('backoffice/recette/edit.html.twig', [
             'form' => $form->createView(),
             'recette' => $recette,
         ]);

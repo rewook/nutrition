@@ -67,7 +67,7 @@ class PatientController extends AbstractController
 
 
 
-        return $this->render('BACKOFFICE/patient/add.html.twig', [
+        return $this->render('backoffice/patient/add.html.twig', [
             'form' => $form->createView(),
         ]);
     }

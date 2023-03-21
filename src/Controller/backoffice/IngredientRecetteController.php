@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class IngredientRecetteController extends AbstractController
 {
     #[Route('/ingredient/recette/{id}', name: 'app_ingredient_recette')]
-    public function index($id,Request $request,EntityManagerInterface $em): Response
+    public function index($id, Request $request, EntityManagerInterface $em): Response
     {
         $recette = $this->getDoctrine()->getRepository(Recette::class)->find($id);
 
@@ -22,8 +22,6 @@ class IngredientRecetteController extends AbstractController
 
 
         $ingredientRecette = new IngredientRecette();
-
-
 
 
         $form = $this->createForm(IngredientRecetteType::class, $ingredientRecette);

@@ -16,12 +16,12 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class RecetteEtapeController extends AbstractController
 {
     #[Route('/recette/etape/{id}', name: 'app_recette_etape')]
-    public function index($id,Request $request,SluggerInterface $slugger,FileUploader $fileUploader): Response
+    public function index($id, Request $request, SluggerInterface $slugger, FileUploader $fileUploader): Response
     {
 
         $recette = $this->getDoctrine()->getRepository(Recette::class)->find($id);
 
-        $listeetapes= $recette->getEtape();
+        $listeetapes = $recette->getEtape();
 
 
         $etape = new Etape();
@@ -53,7 +53,6 @@ class RecetteEtapeController extends AbstractController
             $etape->setDescription($description);
 
 
-
             // On ajoute l'étape à la recette
             $recette->addEtape($etape);
 
@@ -75,7 +74,7 @@ class RecetteEtapeController extends AbstractController
     }
 
     #[Route('/admin/etape/delete/{id}/{recette}', name: 'delete_admin_etape')]
-    public function delete(Request $request,EntityManagerInterface $em,$id,$recette): Response
+    public function delete(Request $request, EntityManagerInterface $em, $id, $recette): Response
     {
 
         $etape = $em->getRepository(Etape::class)->find($id);
@@ -85,9 +84,7 @@ class RecetteEtapeController extends AbstractController
         $this->addFlash('success', 'Etape supprimée avec succès');
 
 
-
         return $this->redirectToRoute('app_recette_etape', ['id' => $recette]);
-
 
 
     }

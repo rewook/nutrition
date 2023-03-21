@@ -32,20 +32,20 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create('fr_FR');
-        $ingredients=['carottes','miel','pommes','poires','bananes','pêches','abricots','fraises','framboises','mûres','cassis','raisins','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts'];
+        $ingredients = ['carottes', 'miel', 'pommes', 'poires', 'bananes', 'pêches', 'abricots', 'fraises', 'framboises', 'mûres', 'cassis', 'raisins', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts'];
 
 
         //creation allergenes
-        $arrayAllergenes = ['noix', 'arachides', 'gluten', 'lactose','oeuf','lait','soja','poisson','fruits à coque','moutarde','graines de sésame','crustacés','animaux','mollusques','céleri','lupin','amande','noisette','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan','noix de pistache','noix de pin','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan','noix de pistache','noix de pin','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan','noix de pistache','noix de pin','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan','noix de pistache','noix de pin','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan','noix de pistache','noix de pin','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan','noix de pistache','noix de pin','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan','noix de pistache','noix de pin','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan','noix de pistache','noix de pin','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan','noix de pistache','noix de pin','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan','noix de pistache','noix de pin','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan','noix de pistache','noix de pin','noix de cajou','noix de macadamia','noix du Brésil','noix de pecan'];
-        for ($i = 1; $i <= 10; $i++){
+        $arrayAllergenes = ['noix', 'arachides', 'gluten', 'lactose', 'oeuf', 'lait', 'soja', 'poisson', 'fruits à coque', 'moutarde', 'graines de sésame', 'crustacés', 'animaux', 'mollusques', 'céleri', 'lupin', 'amande', 'noisette', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan', 'noix de pistache', 'noix de pin', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan', 'noix de pistache', 'noix de pin', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan', 'noix de pistache', 'noix de pin', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan', 'noix de pistache', 'noix de pin', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan', 'noix de pistache', 'noix de pin', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan', 'noix de pistache', 'noix de pin', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan', 'noix de pistache', 'noix de pin', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan', 'noix de pistache', 'noix de pin', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan', 'noix de pistache', 'noix de pin', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan', 'noix de pistache', 'noix de pin', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan', 'noix de pistache', 'noix de pin', 'noix de cajou', 'noix de macadamia', 'noix du Brésil', 'noix de pecan'];
+        for ($i = 1; $i <= 10; $i++) {
             $allergene = new Allergene();
             $allergene->setNom($faker->randomElement($arrayAllergenes));
             $manager->persist($allergene);
         }
 
         //creation regimes
-        $arrayRegimes = ['végétarien', 'végétalien', 'sans gluten', 'sans lactose','sans oeuf'];
-        for ($i = 0; $i <=4; $i++){
+        $arrayRegimes = ['végétarien', 'végétalien', 'sans gluten', 'sans lactose', 'sans oeuf'];
+        for ($i = 0; $i <= 4; $i++) {
             $regime = new Regime();
             $regime->setNom($arrayRegimes[$i]);
             $regime->setDescription($faker->sentence(10));
@@ -53,9 +53,9 @@ class AppFixtures extends Fixture
         }
 
         //creation ingredients
-        $selectedIngredient= [];
-        $arrayIngredients=['carottes','miel','pommes','poires','bananes','pêches','abricots','fraises','framboises','mûres','cassis','raisins','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts','navets','champignons','pâtes','riz','légumes','pommes de terre','tomates','courgettes','aubergines','poivrons','oignons','ail','poireaux','choux','choux-fleurs','brocolis','asperges','haricots verts'];
-        for ($i = 1; $i <= 10; $i++){
+        $selectedIngredient = [];
+        $arrayIngredients = ['carottes', 'miel', 'pommes', 'poires', 'bananes', 'pêches', 'abricots', 'fraises', 'framboises', 'mûres', 'cassis', 'raisins', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts', 'navets', 'champignons', 'pâtes', 'riz', 'légumes', 'pommes de terre', 'tomates', 'courgettes', 'aubergines', 'poivrons', 'oignons', 'ail', 'poireaux', 'choux', 'choux-fleurs', 'brocolis', 'asperges', 'haricots verts'];
+        for ($i = 1; $i <= 10; $i++) {
             $ingredient = new Ingredient();
             $ingredient->setNom($faker->randomElement($arrayIngredients));
             $selectedIngredient[] = $ingredient;
@@ -63,53 +63,49 @@ class AppFixtures extends Fixture
         }
 
         //creation recettes
-        for ($r=0; $r < 10; $r++){
+        for ($r = 0; $r < 10; $r++) {
             $recette = new Recette();
             $recette->setTitre($faker->sentence(3));
             $recette->setDescription($faker->sentence(5));
             $recette->setTempsPrepa($faker->numberBetween(10, 60));
             $recette->setTempsCuisson($faker->numberBetween(10, 60));
             $recette->setTempsRepos($faker->numberBetween(0, 60));
-            $recette->setPublic($faker->randomElement(['0','1']));
+            $recette->setPublic($faker->randomElement(['0', '1']));
 
             //ajout des étapes
-            $nbetapes= random_int(1,6);
-            for ($e=0; $e < $nbetapes; $e++){
+            $nbetapes = random_int(1, 6);
+            for ($e = 0; $e < $nbetapes; $e++) {
                 $etape = new Etape();
-                $etape->setNumero($e+1);
+                $etape->setNumero($e + 1);
                 $etape->setDescription($faker->sentence(5));
                 $recette->addEtape($etape);
                 $manager->persist($etape);
             }
             //ajout des ingrédients
-            $nbingredients= random_int(2,6);
-            for ($i=0; $i < $nbingredients; $i++){
+            $nbingredients = random_int(2, 6);
+            for ($i = 0; $i < $nbingredients; $i++) {
                 $recetteIngredient = new IngredientRecette();
                 $recetteIngredient->setQuantite($faker->numberBetween(1, 10));
-                $recetteIngredient->setUnite($faker->randomElement(['g','kg','ml','cl','l','pièce']));
+                $recetteIngredient->setUnite($faker->randomElement(['g', 'kg', 'ml', 'cl', 'l', 'pièce']));
                 $recetteIngredient->setIngredient($faker->randomElement($selectedIngredient));
                 $recetteIngredient->setRecette($recette);
                 $manager->persist($recetteIngredient);
             }
 
             //ajout des régimes
-            $nbregimes= random_int(0,2);
+            $nbregimes = random_int(0, 2);
 
-                for ($i=0; $i < $nbregimes; $i++){
+            for ($i = 0; $i < $nbregimes; $i++) {
 
 
-                    $recette->addRegime($regime);
+                $recette->addRegime($regime);
 
 
             }
 
 
-
             $manager->persist($recette);
         }
-
-
-
 
 
         // Création du compte médecin
@@ -142,13 +138,10 @@ class AppFixtures extends Fixture
             $patient->setIsVerified(true);
 
             //ajout des allergies
-             $nbAllergies = random_int(0, 2);
-             for ($a = 0; $a < $nbAllergies; $a++) {
-                 $patient->addAllergene($allergene);
-             }
-
-
-
+            $nbAllergies = random_int(0, 2);
+            for ($a = 0; $a < $nbAllergies; $a++) {
+                $patient->addAllergene($allergene);
+            }
 
 
             $manager->persist($patient);

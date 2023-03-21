@@ -4,15 +4,16 @@
 
 {% block body %}
 
-<div class="container my-3 my-md-4 my-lg-5 ">
+    <div class="container my-3 my-md-4 my-lg-5 ">
     <div class="jumbotron d-sm-none d-lg-block">
-        <div class="p-5 text-center bg-image rounded-3 bg-image-jumbo mt-5" >
+        <div class="p-5 text-center bg-image rounded-3 bg-image-jumbo mt-5">
             <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <div class="text-white">
                         <h1 class="mb-3">Sandrine COUPART</h1>
                         <h4 class="mb-3">Médecin nutritionniste</h4>
-                        <a class="btn btn-outline-light btn-lg" href="{{ path('app_contact') }}" role="button">Prendre un Rendez-vous !</a>
+                        <a class="btn btn-outline-light btn-lg" href="{{ path('app_contact') }}" role="button">Prendre
+                            un Rendez-vous !</a>
                     </div>
                 </div>
             </div>
@@ -20,37 +21,45 @@
 
     </div>
 
-        <div class="row mt-lg-5 mt-sm-3">
-            <div class="col-md-12 col-sm-12">
-                <h1 class="text-center">Accueil</h1>
-                <div class="mt-lg-5 mt-sm-3">
-                    <p>Bienvenue sur le site de Sandrine Coupart, votre Médecin diététicienne et nutitionniste sur la ville de CAEN</p>
-                    <p>En tant que médecin diplômée en nutrition, j'ai acquis une compréhension profonde des liens entre la nutrition et la santé globale.
-                        Je travaille avec mes patients pour comprendre leurs besoins individuels et leur fournir des conseils nutritionnels personnalisés.
-                        Je les encourage également à adopter une approche holistique de la nutrition, qui prend en compte leur style de vie et leurs objectifs personnels.</p>
-                    <p>Sur ce site, vous trouverez une variété de ressources pour vous aider à atteindre vos objectifs de santé.
-                        J'offre des programmes de nutrition personnalisés, des articles, des conseils et des recettes saines pour vous aider à prendre en main votre santé.</p>
-                    <p>Afin de comprendre pourquoi et comment manger
-                        sainement, je vous propose un programme que nous construirons ensemble.
-                        N’hésitez plus, prennez <br />
-                        <div class="text-center">
-                        <a href="{{ path('app_contact') }}"><input type="button" class="btn btn-site" value="rendez-vous ! "></a>
-                        </div>
-                    </p>
+    <div class="row mt-lg-5 mt-sm-3">
+        <div class="col-md-12 col-sm-12">
+            <h1 class="text-center">Accueil</h1>
+            <div class="mt-lg-5 mt-sm-3">
+                <p>Bienvenue sur le site de Sandrine Coupart, votre Médecin diététicienne et nutitionniste sur la ville
+                    de CAEN</p>
+                <p>En tant que médecin diplômée en nutrition, j'ai acquis une compréhension profonde des liens entre la
+                    nutrition et la santé globale.
+                    Je travaille avec mes patients pour comprendre leurs besoins individuels et leur fournir des
+                    conseils nutritionnels personnalisés.
+                    Je les encourage également à adopter une approche holistique de la nutrition, qui prend en compte
+                    leur style de vie et leurs objectifs personnels.</p>
+                <p>Sur ce site, vous trouverez une variété de ressources pour vous aider à atteindre vos objectifs de
+                    santé.
+                    J'offre des programmes de nutrition personnalisés, des articles, des conseils et des recettes saines
+                    pour vous aider à prendre en main votre santé.</p>
+                <p>Afin de comprendre pourquoi et comment manger
+                    sainement, je vous propose un programme que nous construirons ensemble.
+                    N’hésitez plus, prennez <br/>
+                <div class="text-center">
+                    <a href="{{ path('app_contact') }}"><input type="button" class="btn btn-site"
+                                                               value="rendez-vous ! "></a>
                 </div>
-
-            </div>
-        </div>
-
-
-        <div class="row mx-auto text-center">
-
-
-            <div class="col mx-auto">
-                <a href="{{ path('app_contact') }}"><img class="img-fluid" src="{{asset('/images/dieteticienne1.jpg') }}" width="400px" height="650px"  alt="Sandrine Coupart"></a>
+                </p>
             </div>
 
         </div>
+    </div>
+
+
+    <div class="row mx-auto text-center">
+
+
+        <div class="col mx-auto">
+            <a href="{{ path('app_contact') }}"><img class="img-fluid" src="{{ asset('/images/dieteticienne1.jpg') }}"
+                                                     width="400px" height="650px" alt="Sandrine Coupart"></a>
+        </div>
+
+    </div>
 
 
 

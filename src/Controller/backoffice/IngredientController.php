@@ -27,7 +27,7 @@ class IngredientController extends AbstractController
     }
 
     #[Route('/admin/ingredient/add', name: 'add_admin_ingredient')]
-    public function add(Request $request,EntityManagerInterface $em,SluggerInterface $slugger,FileUploader $fileUploader): Response
+    public function add(Request $request, EntityManagerInterface $em, SluggerInterface $slugger, FileUploader $fileUploader): Response
     {
         $ingredient = new Ingredient();
         $form = $this->createForm(IngredientType::class, $ingredient);
@@ -48,7 +48,6 @@ class IngredientController extends AbstractController
             }
 
 
-
             $em->persist($ingredient);
             $em->flush();
             $this->addFlash('success', 'Ingrédient ajouté avec succès');
@@ -61,7 +60,7 @@ class IngredientController extends AbstractController
     }
 
     #[Route('/admin/ingredient/{id}', name: 'edit_admin_ingredient')]
-    public function edit(Request $request,EntityManagerInterface $em,$id,SluggerInterface $slugger,FileUploader $fileUploader): Response
+    public function edit(Request $request, EntityManagerInterface $em, $id, SluggerInterface $slugger, FileUploader $fileUploader): Response
     {
         $ingredient = $em->getRepository(Ingredient::class)->find($id);
 
@@ -88,21 +87,19 @@ class IngredientController extends AbstractController
                 return $this->redirectToRoute('show_admin_ingredient');
             }
         }
-            return $this->render('backoffice/ingredient/edit.html.twig', [
-                'form' => $form->createView(),
-                'ingredient' => $ingredient,
-            ]);
-
+        return $this->render('backoffice/ingredient/edit.html.twig', [
+            'form' => $form->createView(),
+            'ingredient' => $ingredient,
+        ]);
 
 
     }
 
     #[Route('/admin/ingredient/delete/{id}', name: 'delete_admin_ingredient')]
-    public function delete(Request $request,EntityManagerInterface $em,$id): Response
+    public function delete(Request $request, EntityManagerInterface $em, $id): Response
     {
 
         $ingredient = $em->getRepository(Ingredient::class)->find($id);
-
 
 
         $em->remove($ingredient);

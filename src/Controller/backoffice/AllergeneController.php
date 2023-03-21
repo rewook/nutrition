@@ -24,7 +24,7 @@ class AllergeneController extends AbstractController
     }
 
     #[Route('/admin/allergene/add', name: 'add_admin_allergene')]
-    public function add(Request $request,EntityManagerInterface $em): Response
+    public function add(Request $request, EntityManagerInterface $em): Response
     {
         $allergene = new Allergene();
         $form = $this->createForm(AllergeneType::class, $allergene);
@@ -43,7 +43,7 @@ class AllergeneController extends AbstractController
     }
 
     #[Route('/admin/allergene/{id}', name: 'edit_admin_allergene')]
-    public function edit(Request $request,EntityManagerInterface $em,$id): Response
+    public function edit(Request $request, EntityManagerInterface $em, $id): Response
     {
         $allergene = $em->getRepository(Allergene::class)->find($id);
 
@@ -67,17 +67,16 @@ class AllergeneController extends AbstractController
     }
 
     #[Route('/admin/allergene/delete/{id}', name: 'delete_admin_allergene')]
-    public function delete(Request $request,EntityManagerInterface $em,$id): Response
+    public function delete(Request $request, EntityManagerInterface $em, $id): Response
     {
 
-            $allergene = $em->getRepository(Allergene::class)->find($id);
+        $allergene = $em->getRepository(Allergene::class)->find($id);
 
 
+        $em->remove($allergene);
+        $em->flush();
 
-            $em->remove($allergene);
-            $em->flush();
-
-            $this->addFlash('success', 'Allergène supprimé avec succès');
+        $this->addFlash('success', 'Allergène supprimé avec succès');
 
         return $this->redirectToRoute('show_admin_allergene');
 

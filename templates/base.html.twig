@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
 
-            <p class="navbar-brand"><b>Sandrine COUPART</b><br>
+        <p class="navbar-brand"><b>Sandrine COUPART</b><br>
             Diéteticienne - Nutritionniste</p>
 
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse justify-content-center flex-grow-1" id="navbarScroll">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_accueil') }}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_apropos') }}">A PROPOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_services') }}">Mes Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_contact') }}">CONTACT</a>
+                </li>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            </ul>
 
-            <div class="collapse navbar-collapse justify-content-center flex-grow-1" id="navbarScroll">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_accueil') }}">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_apropos') }}">A PROPOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_services') }}">Mes Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_contact') }}">CONTACT</a>
-                    </li>
+            {% if app.user is null %}
 
-                </ul>
-
-                {% if app.user is null %}
-
-                        <ul>
-                            <li>
+                <ul>
+                    <li>
                         <a class="nav-link" href="{{ path('app_login') }}">
                             Se Connecter
                         </a>
-                            </li>
-                        </ul>
+                    </li>
+                </ul>
 
 
-                {% else %}
+            {% else %}
 
 
 
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="true">
                             Connecté
                         </a>
-                        <ul class="dropdown-menu bg-site" >
+                        <ul class="dropdown-menu bg-site">
                             {% if is_granted('ROLE_ADMIN') %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ path('show_admin_patient') }}">GESTION</a>
@@ -74,17 +75,16 @@
                             {% endif %}
 
 
+                            <li class="nav-item">
 
-                                <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_patient') }}">Vos Recettes</a>
 
-                                        <a class="nav-link" href="{{ path('app_patient') }}" >Vos Recettes</a>
+                            </li>
 
-                                </li>
+                            <li class="nav-item">
 
-                                <li class="nav-item">
-
-                                    <a class="nav-link" href="{{ path('app_logout') }}" >Se Déconnecter</a>
-                                </li>
+                                <a class="nav-link" href="{{ path('app_logout') }}">Se Déconnecter</a>
+                            </li>
 
                         </ul>
                     </li>
@@ -92,19 +92,28 @@
 
                 </ul>
 
-                    <ul>
-                        <li>
-                            <p class="text-white">Bonjour {{ app.user.prenom }} {{ app.user.nom }}</p>
-                        </li>
-                    </ul>
+                <ul>
+                    <li>
+                        <p class="text-white">Bonjour {{ app.user.prenom }} {{ app.user.nom }}</p>
+                    </li>
+                </ul>
 
-                {% endif %}
-            </div>
+            {% endif %}
         </div>
-    </nav>
+    </div>
+</nav>
 
-        {% block body %}{% endblock %}
+{% block body %}{% endblock %}
+
+<footer class="mt-auto">
+    <div class="row ">
+        <div class="col"><a href="{{ path('app_mentions_legales') }}">Mentions Légales</a></div>
+        <div class="col">Copyright 2023 Sandrine Coupart</div>
+        <div class="col"><a href="{{ path('app_mentions_rgpd') }}">RGPD</a></div>
 
     </div>
-    </body>
+</footer>
+
+
+</body>
 </html>

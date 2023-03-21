@@ -45,8 +45,7 @@ class RecetteRepository extends ServiceEntityRepository
             ->Where('r.etape = :val')
             ->setParameter('val', $id)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getOneOrNullResult();
     }
 
     public function findRecettesSansAllergenesEtRegimes($allergenes, $regimes)

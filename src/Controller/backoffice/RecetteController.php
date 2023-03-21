@@ -25,7 +25,7 @@ class RecetteController extends AbstractController
     }
 
     #[Route('/admin/recette/add', name: 'add_admin_recette')]
-    public function add(Request $request,EntityManagerInterface $em): Response
+    public function add(Request $request, EntityManagerInterface $em): Response
     {
 
         $recette = new Recette();
@@ -42,7 +42,6 @@ class RecetteController extends AbstractController
             }
 
 
-
             $em->persist($recette);
             $em->flush();
             $this->addFlash('success', 'Recette ajouté avec succès');
@@ -55,7 +54,7 @@ class RecetteController extends AbstractController
     }
 
     #[Route('/admin/recette/{id}', name: 'edit_admin_recette')]
-    public function edit(Request $request,EntityManagerInterface $em,$id): Response
+    public function edit(Request $request, EntityManagerInterface $em, $id): Response
     {
         $recette = $em->getRepository(Recette::class)->find($id);
 
@@ -79,11 +78,10 @@ class RecetteController extends AbstractController
     }
 
     #[Route('/admin/recette/delete/{id}', name: 'delete_admin_recette')]
-    public function delete(Request $request,EntityManagerInterface $em,$id): Response
+    public function delete(Request $request, EntityManagerInterface $em, $id): Response
     {
 
         $recette = $em->getRepository(Recette::class)->find($id);
-
 
 
         $em->remove($recette);

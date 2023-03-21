@@ -24,7 +24,7 @@ class RegimeController extends AbstractController
     }
 
     #[Route('/admin/regime/add', name: 'add_admin_regime')]
-    public function add(Request $request,EntityManagerInterface $em): Response
+    public function add(Request $request, EntityManagerInterface $em): Response
     {
         $regime = new Regime();
         $form = $this->createForm(RegimeType::class, $regime);
@@ -43,7 +43,7 @@ class RegimeController extends AbstractController
     }
 
     #[Route('/admin/regime/{id}', name: 'edit_admin_regime')]
-    public function edit(Request $request,EntityManagerInterface $em,$id): Response
+    public function edit(Request $request, EntityManagerInterface $em, $id): Response
     {
         $regime = $em->getRepository(Regime::class)->find($id);
 
@@ -67,11 +67,10 @@ class RegimeController extends AbstractController
     }
 
     #[Route('/admin/regime/delete/{id}', name: 'delete_admin_regime')]
-    public function delete(Request $request,EntityManagerInterface $em,$id): Response
+    public function delete(Request $request, EntityManagerInterface $em, $id): Response
     {
 
         $regime = $em->getRepository(Regime::class)->find($id);
-
 
 
         $em->remove($regime);

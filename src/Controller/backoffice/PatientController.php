@@ -15,11 +15,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class PatientController extends AbstractController
 {
     #[Route('/admin/patient', name: 'show_admin_patient')]
-    public function show(EntityManagerInterface $em,UserRepository $userRepository): Response
+    public function show(EntityManagerInterface $em, UserRepository $userRepository): Response
     {
         //récupération des patients
-        $patients =  $userRepository->findAllUser('["ROLE_USER"]');
-
+        $patients = $userRepository->findAllUser('["ROLE_USER"]');
 
 
         return $this->render('backoffice/patient/show.html.twig', [
@@ -28,7 +27,7 @@ class PatientController extends AbstractController
     }
 
     #[Route('/admin/patient/add', name: 'add_admin_patient')]
-    public function add(Request $request,EntityManagerInterface $em,UserPasswordHasherInterface $userPasswordHasher): Response
+    public function add(Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $patient = new User();
 
@@ -51,7 +50,7 @@ class PatientController extends AbstractController
             $patient->setPrenom($prenom);
 
             // encode the plain password
-            $plainPassword="2rdR17$100";
+            $plainPassword = "2rdR17$100";
             $patient->setPassword(
                 $userPasswordHasher->hashPassword(
                     $patient,
@@ -66,14 +65,13 @@ class PatientController extends AbstractController
         }
 
 
-
         return $this->render('backoffice/patient/add.html.twig', [
             'form' => $form->createView(),
         ]);
     }
 
     #[Route('/admin/patient/{id}', name: 'edit_admin_patient')]
-    public function edit(Request $request,EntityManagerInterface $em,$id): Response
+    public function edit(Request $request, EntityManagerInterface $em, $id): Response
     {
         $patient = $em->getRepository(User::class)->find($id);
 
@@ -97,11 +95,10 @@ class PatientController extends AbstractController
     }
 
     #[Route('/admin/patient/delete/{id}', name: 'delete_admin_patient')]
-    public function delete(Request $request,EntityManagerInterface $em,$id): Response
+    public function delete(Request $request, EntityManagerInterface $em, $id): Response
     {
 
         $patient = $em->getRepository(User::class)->find($id);
-
 
 
         $em->remove($patient);

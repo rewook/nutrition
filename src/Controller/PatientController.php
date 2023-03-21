@@ -20,7 +20,6 @@ class PatientController extends AbstractController
             ->findRecettesSansAllergenesEtRegimes($allergenes, $regimes);
 
 
-
         return $this->render('patient/index.html.twig', [
             'recettes' => $recettes,
         ]);
